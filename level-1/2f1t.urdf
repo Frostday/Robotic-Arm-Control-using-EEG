@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot name="origins">
+    <material name="blue">
+        <color rgba="0 0 1 1"/>
+    </material>
+
+    <link name="arm">
+        <visual>
+            <geometry>
+                <cylinder length="2" radius="0.1" />
+            </geometry>
+            <origin rpy="1.57075 0.0 0.0"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <link name="palm">
+        <visual>
+            <geometry>
+                <box size="0.1 0.5 0.4" />
+            </geometry>
+            <origin xyz="0 1.25 0" rpy="0 0 0"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <joint name="arm_to_palm" type="fixed">
+        <parent link="arm" />
+        <child link="palm"/>
+    </joint>
+
+    <link name="thumb">
+        <visual>
+            <geometry>
+                <box size="0.1 0.1 0.4" />
+            </geometry>
+            <origin xyz="0 1.25 0.4"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <joint name="palm_to_thumb" type="revolute">
+        <axis xyz="1 0 0"/>
+        <limit effort="1000.0" lower="0.0" upper="1.57075" velocity="0.5"/>
+        <parent link="palm" />
+        <child link="thumb"/>
+    </joint>
+
+    <link name="finger_1">
+        <visual>
+            <geometry>
+                <box size="0.1 0.4 0.1" />
+            </geometry>
+            <origin xyz="0 1.7 0.1"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <joint name="palm_to_finger_1" type="revolute">
+        <axis xyz="1 0 0"/>
+        <limit effort="1000.0" lower="0.0" upper="1.57075" velocity="0.5"/>
+        <parent link="palm" />
+        <child link="finger_1"/>
+    </joint>
+
+    <link name="finger_2">
+        <visual>
+            <geometry>
+                <box size="0.1 0.4 0.1" />
+            </geometry>
+            <origin xyz="0 1.7 -0.1"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <joint name="palm_to_finger_2" type="revolute">
+        <axis xyz="1 0 0"/>
+        <limit effort="1000.0" lower="0.0" upper="1.57075" velocity="0.5"/>
+        <parent link="palm" />
+        <child link="finger_2"/>
+    </joint>
+
+</robot>
