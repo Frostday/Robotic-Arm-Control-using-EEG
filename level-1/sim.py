@@ -9,21 +9,41 @@ p.setGravity(0,0,0)
 
 startPos = [0,0,0]
 startOrientation = p.getQuaternionFromEuler([0,0,0])
-simulationId = p.loadURDF("level-1/basic.urdf", startPos, startOrientation)
-# boxId = p.loadURDF("r2d2.urdf",startPos, startOrientation)
-for i in range (10000):
-    # maxForce = 0
-    # mode = p.VELOCITY_CONTROL
-    # p.setJointMotorControl2(simulationId, 1, controlMode=mode, force=maxForce)
+print('*****************************************')
+simulationId = p.loadURDF("/home/firethrone/Projects/EEG/2f1t.urdf", startPos, startOrientation)
+print('*****************************************')
+# for i in range (10000):
+#     # maxForce = 0
+#     # mode = p.VELOCITY_CONTROL
+#     # p.setJointMotorControl2(simulationId, 1, controlMode=mode, force=maxForce)
+#     p.stepSimulation()
+#     time.sleep(1./240.)
+# cubePos, cubeOrn = p.getBasePositionAndOrientation(simulationId)
+# print(cubePos,cubeOrn)
+
+
+
+# number_of_joints = p.getNumJoints(simulationId)
+# for joint_number in range(number_of_joints):
+#     info = p.getJointInfo(simulationId, joint_number)
+#     print(info[0], ": ", info[1])
+
+Grab = p.addUserDebugParameter('Grab', 0, 30.0, 0)
+Elbow = p.addUserDebugParameter('Elbow', -1.5, 1.5, 0)
+grab_indices = [2,3,4]
+elbow_indices = [0]
+
+while True:
+    user_grab = p.readUserDebugParameter(Grab)
+    user_elbow = p.readUserDebugParameter(Elbow)
+    for joint_index in grab_indices:
+        p.setJointMotorControl2(simulationId, joint_index,
+                                p.POSITION_CONTROL,
+                                targetVelocity=user_grab)
+    for joint_index in elbow_indices:
+        p.setJointMotorControl2(simulationId, joint_index,
+                                p.POSITION_CONTROL, 
+                                targetPosition=user_elbow)
     p.stepSimulation()
-    time.sleep(1./240.)
-cubePos, cubeOrn = p.getBasePositionAndOrientation(simulationId)
-print(cubePos,cubeOrn)
-p.disconnect()
 
-number_of_joints = p.getNumJoints(simulationId)
-for joint_number in range(number_of_joints):
-    info = p.getJointInfo(simulationId, joint_number)
-    print(info)
-
-sleep(20)
+# p.disconnect()
