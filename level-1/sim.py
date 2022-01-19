@@ -44,4 +44,8 @@ while True:
                                 targetPosition=user_elbow)
     p.stepSimulation()
 
+<<<<<<< HEAD
 # p.disconnect()
+=======
+# p.disconnect()
+>>>>>>> b74da2e96fcdd2e07e260a522e761e9c3f90bbf7
