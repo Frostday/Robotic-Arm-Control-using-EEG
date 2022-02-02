@@ -50,7 +50,6 @@
         <child link="palm"/>
     </joint>
 
-
     <link name="thumb">
         <visual>
             <geometry>

@@ -9,17 +9,7 @@ p.setGravity(0,0,0)
 
 startPos = [0,0,0]
 startOrientation = p.getQuaternionFromEuler([0,0,0])
-simulationId = p.loadURDF("2f1t.urdf", startPos, startOrientation)
-# for i in range (10000):
-#     # maxForce = 0
-#     # mode = p.VELOCITY_CONTROL
-#     # p.setJointMotorControl2(simulationId, 1, controlMode=mode, force=maxForce)
-#     p.stepSimulation()
-#     time.sleep(1./240.)
-# cubePos, cubeOrn = p.getBasePositionAndOrientation(simulationId)
-# print(cubePos,cubeOrn)
-
-
+simulationId = p.loadURDF("level-1/2f1t.urdf", startPos, startOrientation)
 
 # number_of_joints = p.getNumJoints(simulationId)
 # for joint_number in range(number_of_joints):
@@ -57,3 +47,4 @@ while True:
                                 targetPosition=user_elbow)
     p.stepSimulation()
 # p.disconnect()
+# elbow - left/right | wrist - left/right
