@@ -5,7 +5,7 @@ import time
 
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
-p.setGravity(0,0,0)
+# p.setGravity(0,0,0)
 
 startPos = [0,0,0]
 startOrientation = p.getQuaternionFromEuler([0,0,0])
@@ -18,7 +18,7 @@ simulationId = p.loadURDF("level-1/2f1t.urdf", startPos, startOrientation)
 
 Grab = p.addUserDebugParameter('Grab', 0, 30.0, 0)
 Elbow = p.addUserDebugParameter('Elbow', 0, 2.617, 0)
-Wrist = p.addUserDebugParameter('Wrist',0,9,0)
+Wrist = p.addUserDebugParameter('Wrist', 0, 9, 0)
 grab_indices = [2,3,4]
 elbow_indices = [0]
 wrist_indices = [1]
