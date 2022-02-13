@@ -4,11 +4,10 @@ import numpy as np
 from sklearn import preprocessing
 
 from sklearn.metrics import mean_squared_error
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, LSTM, Activation
+from keras.models import Sequential
+from keras.layers import Dense, LSTM, Activation
 from tensorflow import keras
 import tensorflow as tf 
-from tensorflow.keras.utils import Sequence 
 
 import pybullet as p
 import pybullet_data
