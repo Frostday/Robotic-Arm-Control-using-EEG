@@ -21,8 +21,6 @@ print('*****************************************')
 # cubePos, cubeOrn = p.getBasePositionAndOrientation(simulationId)
 # print(cubePos,cubeOrn)
 
-
-
 # number_of_joints = p.getNumJoints(simulationId)
 # for joint_number in range(number_of_joints):
 #     info = p.getJointInfo(simulationId, joint_number)
@@ -53,4 +51,4 @@ while True:
                                 force = 0.001)
     p.stepSimulation()
 
-# p.disconnect()
+# # p.disconnect()
