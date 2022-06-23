@@ -43,14 +43,6 @@
         <child link="arm2"/>
     </joint>
 
-    <!-- <joint name="arm_to_arm_new" type="revolute">
-        <axis xyz="0 1 0"/>
-        <origin xyz="0 0 0"/>
-        <limit effort="1000.0" lower="0.0" upper="2.617" velocity="0.5"/>
-        <parent link="arm1" />
-        <child link="arm2"/>
-    </joint> -->
-
     <link name="palm">
         <visual>
             <geometry>
