@@ -10,7 +10,7 @@ p.setGravity(0,0,0)
 startPos = [0,0,0]
 startOrientation = p.getQuaternionFromEuler([0,0,0])
 print('*****************************************')
-simulationId = p.loadURDF("/home/firethrone/Projects/EEG/2f1t.urdf", startPos, startOrientation)
+simulationId = p.loadURDF("level-1/2f1t.urdf", startPos, startOrientation)
 print('*****************************************')
 # for i in range (10000):
 #     # maxForce = 0
