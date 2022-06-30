@@ -4,8 +4,8 @@ This repository contains the code for our capstone project.
 # Team
 
 ## Capstone Members
+- Dhruv Garg (Team Leader)
 - Aditya Upadhyay
-- Dhruv Garg
 - Guneet Talwar
 - Snehil Mittal
 
