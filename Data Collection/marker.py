@@ -189,13 +189,13 @@ class Marker():
 def main():
     
     # Please fill your application clientId and clientSecret before running script
-    your_app_client_id = ''
-    your_app_client_secret = ''
+    your_app_client_id = 'ySS0mx4vCFMQU9q5Q3KVPQQcgVV8JeHuA8KjxI6R'
+    your_app_client_secret = 'y0iTt5XWYg1YXeAULptA4HHpCBIQhvbSG3ILluDuyoqQCxeDPqJSpqa0GJLevobPoswbawTywHZf5xM93n7iAusA8fiJkB5Znxt9cHbczJbTYo8M3W6fLWG0rGH9JvH0'
 
     m = Marker(your_app_client_id, your_app_client_secret)
 
     # input params for create_record. Please see on_create_session_done before running script
-    m.record_title = '' # required param and can not be empty
+    m.record_title = 'motion' # required param and can not be empty
     m.record_description = '' # optional param
 
     # marker input for inject marker. Please see add_markers()
@@ -203,8 +203,8 @@ def main():
     m.marker_label = "test label" #required param and can not be empty
 
     # input params for export_record. Please see on_warn_cortex_stop_all_sub()
-    m.record_export_folder = '' # your place to export, you should have write permission, example on desktop
-    m.record_export_data_types = ['EEG', 'MOTION', 'PM', 'BP']
+    m.record_export_folder = 'D:\Capstone\Robotic-Arm-Control-using-EEG\Data Collection\Data' # your place to export, you should have write permission, example on desktop
+    m.record_export_data_types = ['MOTION', 'PM', 'BP']
     m.record_export_format = 'CSV'
     m.record_export_version = 'V2'
 
