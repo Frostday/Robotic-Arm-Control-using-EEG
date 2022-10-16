@@ -72,7 +72,7 @@ class Cortex(Dispatcher):
         self.headset_id = ''
         self.debug = debug_mode
         self.debit = 10
-        self.license = ''
+        self.license = '9ee66435-3e7a-4c46-9d48-92b3f162f032'
 
         if client_id == '':
             raise ValueError('Empty your_app_client_id. Please fill in your_app_client_id before running the example.')
@@ -288,7 +288,7 @@ class Cortex(Dispatcher):
             self.emit('export_record_done', data=success_export)
         elif req_id == INJECT_MARKER_REQUEST_ID:
             self.emit('inject_marker_done', data=result_dic['marker'])
-        elif req_id == INJECT_MARKER_REQUEST_ID:
+        elif req_id == UPDATE_MARKER_REQUEST_ID:
             self.emit('update_marker_done', data=result_dic['marker'])
         else:
             print('No handling for response of request ' + req_id)

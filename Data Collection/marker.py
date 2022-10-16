@@ -1,6 +1,8 @@
+import sys
 from cortex import Cortex
 import time
 import threading
+import keyboard
 
 class Marker():
     def __init__(self, app_client_id, app_client_secret, **kwargs):
@@ -13,7 +15,7 @@ class Marker():
         self.c.bind(export_record_done=self.on_export_record_done)
         self.c.bind(inform_error=self.on_inform_error)
 
-    def start(self, number_markers=10, headsetId=''):
+    def start(self, number_markers=10,headsetId=''):
         """
         To start data recording and inject marker process as below workflow
         (1) check access right -> authorize -> connect headset->create session
@@ -32,7 +34,7 @@ class Marker():
         """
         self.number_markers = number_markers
         self.marker_idx = 0
-
+        
         if headsetId != '':
             self.c.set_wanted_headset(headsetId)
 
@@ -70,19 +72,53 @@ class Marker():
         self.c.export_record(folder, stream_types, export_format, record_ids, version, **kwargs)
 
 
-    def add_markers(self):
-        print('add_markers: ' + str(self.number_markers) + ' markers will be injected each second automatically.')
-        for m in range(self.number_markers):
-            marker_time = time.time()*1000
-            print('add marker at : ', marker_time)
-            
-            # marker_value = "test marker value"
-            marker_label = self.marker_label +"_" +  str(m)
-
-            self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
-
-            # add marker each 3 seconds
-            time.sleep(3)
+    def add_markers(self,label_index=0):
+        print('add_markers: ' + str(self.number_markers) + ' markers will be injected as per user pressed key.')
+        
+        flag = True
+        while(flag):
+            if keyboard.read_key()=='N':
+                marker_time = time.time()*1000
+                print('add marker at : ', marker_time)
+                # marker_value = "test marker value"
+                marker_label = self.marker_label[label_index]
+                label_index=label_index+1
+                if label_index==5:
+                    label_index=0
+                self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+            # elif input=='1':
+            #     label_index=1
+            #     marker_time = time.time()*1000
+            #     print('add marker at : ', marker_time)
+            #     # marker_value = "test marker value"
+            #     marker_label = self.marker_label[label_index]
+            #     self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+            # elif input=='2':
+            #     label_index=2
+            #     marker_time = time.time()*1000
+            #     print('add marker at : ', marker_time)
+            #     # marker_value = "test marker value"
+            #     marker_label = self.marker_label[label_index]
+            #     self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+            # elif input=='3':
+            #     label_index=3
+            #     marker_time = time.time()*1000
+            #     print('add marker at : ', marker_time)
+            #     # marker_value = "test marker value"
+            #     marker_label = self.marker_label[label_index]
+            #     self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+            # elif input=='4':
+            #     label_index=4
+            #     marker_time = time.time()*1000
+            #     print('add marker at : ', marker_time)
+            #     # marker_value = "test marker value"
+            #     marker_label = self.marker_label[label_index]
+            #     self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+            elif keyboard.read_key()=='S':
+                flag=False
+            else:
+                continue
+        self.stop_record()    
 
     def inject_marker(self, time, value, label, **kwargs):
         """
@@ -124,8 +160,9 @@ class Marker():
         print('on_create_record_done: recordId: {0}, title: {1}, startTime: {2}'.format(self.record_id, title, start_time))
 
         # inject markers
-        th = threading.Thread(target=self.add_markers)
-        th.start()
+        # th = threading.Thread(target=self.add_markers(0))
+        # th.start()
+        self.add_markers(0)
 
     def on_stop_record_done(self, *args, **kwargs):
         
@@ -147,6 +184,8 @@ class Marker():
         start_time = data['startDatetime']
         marker_type = data['type']
         print('on_inject_marker_done: markerId: {0}, type: {1}, startTime: {2}'.format(marker_id, marker_type, start_time))
+        
+        # self.update_marker(marker_id,time.time()+ 11000)
         
         self.marker_idx = self.marker_idx + 1
         if self.marker_idx == self.number_markers:
@@ -189,29 +228,32 @@ class Marker():
 def main():
     
     # Please fill your application clientId and clientSecret before running script
-    your_app_client_id = 'ySS0mx4vCFMQU9q5Q3KVPQQcgVV8JeHuA8KjxI6R'
-    your_app_client_secret = 'y0iTt5XWYg1YXeAULptA4HHpCBIQhvbSG3ILluDuyoqQCxeDPqJSpqa0GJLevobPoswbawTywHZf5xM93n7iAusA8fiJkB5Znxt9cHbczJbTYo8M3W6fLWG0rGH9JvH0'
+    your_app_client_id = 'YhTVuH9KahGPJFaTjaHA3JTWFBJgphPGolgYomZ7'
+    your_app_client_secret = 'GGu9BpyH3gRkJq0ZJpdjAPqofgYDctl31Bzbl69o2XCCL0uLjcl5Gfo0RgMGJxEfnBEc7hyEAZFnsKBADBohkEZ4ifAuaH0L7jMWRAgs6K3GYO7CwPbYREsj65NYw7aa'
 
     m = Marker(your_app_client_id, your_app_client_secret)
 
     # input params for create_record. Please see on_create_session_done before running script
-    m.record_title = 'motion' # required param and can not be empty
+    m.record_title = 'Subject_1' # required param and can not be empty
     m.record_description = '' # optional param
 
     # marker input for inject marker. Please see add_markers()
     m.marker_value = "test value" # required param and can not be empty
-    m.marker_label = "test label" #required param and can not be empty
+    m.marker_label = ['rest','grab','release','elbow_up','elbow_down'] #required param and can not be empty
 
     # input params for export_record. Please see on_warn_cortex_stop_all_sub()
     m.record_export_folder = 'D:\Capstone\Robotic-Arm-Control-using-EEG\Data Collection\Data' # your place to export, you should have write permission, example on desktop
-    m.record_export_data_types = ['MOTION', 'PM', 'BP']
+    m.record_export_data_types = ['EEG']
     m.record_export_format = 'CSV'
     m.record_export_version = 'V2'
-
-    marker_numbers = 10
-    m.start(marker_numbers)
+    number_markers = 10
+    m.start(number_markers)
 
 if __name__ =='__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.exit(0)
+    
 
 # ----------------------------------------------

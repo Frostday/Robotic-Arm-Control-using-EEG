@@ -227,13 +227,13 @@ class Subcribe():
 def main():
 
     # Please fill your application clientId and clientSecret before running script
-    your_app_client_id = 'ySS0mx4vCFMQU9q5Q3KVPQQcgVV8JeHuA8KjxI6R'
-    your_app_client_secret = 'y0iTt5XWYg1YXeAULptA4HHpCBIQhvbSG3ILluDuyoqQCxeDPqJSpqa0GJLevobPoswbawTywHZf5xM93n7iAusA8fiJkB5Znxt9cHbczJbTYo8M3W6fLWG0rGH9JvH0'
+    your_app_client_id = 'YhTVuH9KahGPJFaTjaHA3JTWFBJgphPGolgYomZ7'
+    your_app_client_secret = 'GGu9BpyH3gRkJq0ZJpdjAPqofgYDctl31Bzbl69o2XCCL0uLjcl5Gfo0RgMGJxEfnBEc7hyEAZFnsKBADBohkEZ4ifAuaH0L7jMWRAgs6K3GYO7CwPbYREsj65NYw7aa'
 
     s = Subcribe(your_app_client_id, your_app_client_secret)
 
     # list data streams
-    streams = ['mot','met','pow']
+    streams = ['eeg','mot','met','pow']
     s.start(streams)
 
 if __name__ =='__main__':
