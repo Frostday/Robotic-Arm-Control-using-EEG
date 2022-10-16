@@ -113,7 +113,7 @@ wrist_indices = [1]
 for i in op:
     user_grab = i[3]*30
     user_elbow = i[0]*2.617
-    user_wrist = i[2]*9
+    user_wrist = i[1]*9
     if user_wrist == 9:
         user_elbow = 0
     # user_grab = 30
