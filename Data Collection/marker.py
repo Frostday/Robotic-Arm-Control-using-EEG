@@ -75,46 +75,49 @@ class Marker():
     def add_markers(self,label_index=0):
         print('add_markers: ' + str(self.number_markers) + ' markers will be injected as per user pressed key.')
         
+        # label_index=label_index+1
+        # if label_index==5:
+        #     label_index=0
+        
         flag = True
         while(flag):
-            if keyboard.read_key()=='N':
+            input = keyboard.read_key()
+            if input=='0':
+                label_index=0
                 marker_time = time.time()*1000
                 print('add marker at : ', marker_time)
-                # marker_value = "test marker value"
                 marker_label = self.marker_label[label_index]
-                label_index=label_index+1
-                if label_index==5:
-                    label_index=0
                 self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
-            # elif input=='1':
-            #     label_index=1
-            #     marker_time = time.time()*1000
-            #     print('add marker at : ', marker_time)
-            #     # marker_value = "test marker value"
-            #     marker_label = self.marker_label[label_index]
-            #     self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
-            # elif input=='2':
-            #     label_index=2
-            #     marker_time = time.time()*1000
-            #     print('add marker at : ', marker_time)
-            #     # marker_value = "test marker value"
-            #     marker_label = self.marker_label[label_index]
-            #     self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
-            # elif input=='3':
-            #     label_index=3
-            #     marker_time = time.time()*1000
-            #     print('add marker at : ', marker_time)
-            #     # marker_value = "test marker value"
-            #     marker_label = self.marker_label[label_index]
-            #     self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
-            # elif input=='4':
-            #     label_index=4
-            #     marker_time = time.time()*1000
-            #     print('add marker at : ', marker_time)
-            #     # marker_value = "test marker value"
-            #     marker_label = self.marker_label[label_index]
-            #     self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
-            elif keyboard.read_key()=='S':
+                time.sleep(2)
+            elif input=='1':
+                label_index=1
+                marker_time = time.time()*1000
+                print('add marker at : ', marker_time)
+                marker_label = self.marker_label[label_index]
+                self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+                time.sleep(2)
+            elif input=='2':
+                label_index=2
+                marker_time = time.time()*1000
+                print('add marker at : ', marker_time)
+                marker_label = self.marker_label[label_index]
+                self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+                time.sleep(2)
+            elif input=='3':
+                label_index=3
+                marker_time = time.time()*1000
+                print('add marker at : ', marker_time)
+                marker_label = self.marker_label[label_index]
+                self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+                time.sleep(2)
+            elif input=='4':
+                label_index=4
+                marker_time = time.time()*1000
+                print('add marker at : ', marker_time)
+                marker_label = self.marker_label[label_index]
+                self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+                time.sleep(2)
+            elif input=='S':
                 flag=False
             else:
                 continue

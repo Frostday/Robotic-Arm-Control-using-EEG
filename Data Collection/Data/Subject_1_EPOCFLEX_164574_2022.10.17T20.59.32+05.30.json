@@ -1,0 +1,186 @@
+{
+    "Markers": [
+        {
+            "endDatetime": "2022-10-17T20:59:34.752875+05:30",
+            "extras": {
+            },
+            "index": 1,
+            "label": "grab",
+            "originalEndDatetime": "2022-10-17T20:59:34.756015+05:30",
+            "originalStartDatetime": "2022-10-17T20:59:34.756015+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T20:59:34.752875+05:30",
+            "type": "instance",
+            "uuid": "1e62258f-3768-4253-810f-064a926edd99",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-17T20:59:39.761016+05:30",
+            "extras": {
+            },
+            "index": 2,
+            "label": "release",
+            "originalEndDatetime": "2022-10-17T20:59:39.759041+05:30",
+            "originalStartDatetime": "2022-10-17T20:59:39.759041+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T20:59:39.761016+05:30",
+            "type": "instance",
+            "uuid": "502ddbeb-0eaf-49fe-80cd-aea933f089b3",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-17T20:59:48.714729+05:30",
+            "extras": {
+            },
+            "index": 3,
+            "label": "elbow_up",
+            "originalEndDatetime": "2022-10-17T20:59:48.714323+05:30",
+            "originalStartDatetime": "2022-10-17T20:59:48.714323+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T20:59:48.714729+05:30",
+            "type": "instance",
+            "uuid": "a80026d9-44b8-4c9e-8b0c-c5ecc923a42d",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-17T20:59:54.457293+05:30",
+            "extras": {
+            },
+            "index": 4,
+            "label": "rest",
+            "originalEndDatetime": "2022-10-17T20:59:54.459063+05:30",
+            "originalStartDatetime": "2022-10-17T20:59:54.459063+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T20:59:54.457293+05:30",
+            "type": "instance",
+            "uuid": "f358d49a-3ba1-4181-a80e-846f00ffa97b",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-17T20:59:59.910776+05:30",
+            "extras": {
+            },
+            "index": 5,
+            "label": "elbow_down",
+            "originalEndDatetime": "2022-10-17T20:59:59.914309+05:30",
+            "originalStartDatetime": "2022-10-17T20:59:59.914309+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T20:59:59.910776+05:30",
+            "type": "instance",
+            "uuid": "4b364f41-e599-433a-8be7-94ce92df8b52",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-17T21:00:03.786031+05:30",
+            "extras": {
+            },
+            "index": 6,
+            "label": "grab",
+            "originalEndDatetime": "2022-10-17T21:00:03.783947+05:30",
+            "originalStartDatetime": "2022-10-17T21:00:03.783947+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T21:00:03.786031+05:30",
+            "type": "instance",
+            "uuid": "8caf2c41-77a1-4c92-990a-b7d991635664",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-17T21:00:13.692931+05:30",
+            "extras": {
+            },
+            "index": 7,
+            "label": "release",
+            "originalEndDatetime": "2022-10-17T21:00:13.689949+05:30",
+            "originalStartDatetime": "2022-10-17T21:00:13.689949+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T21:00:13.692931+05:30",
+            "type": "instance",
+            "uuid": "9541fc71-10eb-4220-af89-67d461d84e71",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-17T21:00:39.085223+05:30",
+            "extras": {
+            },
+            "index": 8,
+            "label": "rest",
+            "originalEndDatetime": "2022-10-17T21:00:39.085946+05:30",
+            "originalStartDatetime": "2022-10-17T21:00:39.085946+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T21:00:39.085223+05:30",
+            "type": "instance",
+            "uuid": "b87a4781-fc0f-47f9-b419-2e53377f359c",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-17T21:00:45.116869+05:30",
+            "extras": {
+            },
+            "index": 9,
+            "label": "elbow_down",
+            "originalEndDatetime": "2022-10-17T21:00:45.114279+05:30",
+            "originalStartDatetime": "2022-10-17T21:00:45.114279+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T21:00:45.116869+05:30",
+            "type": "instance",
+            "uuid": "1fc529e8-6d08-45f2-be60-53c4953fbe3b",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-17T21:01:03.149303+05:30",
+            "extras": {
+            },
+            "index": 10,
+            "label": "release",
+            "originalEndDatetime": "2022-10-17T21:01:03.145660+05:30",
+            "originalStartDatetime": "2022-10-17T21:01:03.145660+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-17T21:01:03.149303+05:30",
+            "type": "instance",
+            "uuid": "bcc6b43e-030b-490a-ae3a-351b9556f4d6",
+            "value": "test value"
+        }
+    ],
+    "connectionType": "dongle",
+    "exportApp": "com.adgs.testapp",
+    "exportTime": "2022-10-17T21:01:14.456+05:30",
+    "headsetType": "EPOCFLEX",
+    "mappings": {
+        "CMS": "TP9",
+        "DRL": "TP10",
+        "LA": "C3",
+        "LB": "T7",
+        "LC": "FC1",
+        "LD": "FC5",
+        "LE": "FT9",
+        "LF": "F3",
+        "LG": "F7",
+        "LH": "Fp1",
+        "LJ": "Pz",
+        "LK": "Cz",
+        "LL": "O1",
+        "LM": "PO9",
+        "LN": "P3",
+        "LO": "P7",
+        "LP": "CP1",
+        "LQ": "CP5",
+        "RA": "C4",
+        "RB": "T8",
+        "RC": "FC2",
+        "RD": "FC6",
+        "RE": "FT10",
+        "RF": "F4",
+        "RG": "F8",
+        "RH": "Fp2",
+        "RJ": "Oz",
+        "RK": "Fz",
+        "RL": "O2",
+        "RM": "PO10",
+        "RN": "P4",
+        "RO": "P8",
+        "RP": "CP2",
+        "RQ": "CP6"
+    },
+    "recordId": "39504086-70a2-4113-82c6-b61b5ab803fb",
+    "user": "adgs"
+}
