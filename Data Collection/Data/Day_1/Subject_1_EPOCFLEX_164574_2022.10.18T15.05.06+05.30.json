@@ -1,0 +1,200 @@
+{
+    "Markers": [
+        {
+            "endDatetime": "2022-10-18T15:05:18.288851+05:30",
+            "extras": {
+            },
+            "index": 1,
+            "label": "rest",
+            "originalEndDatetime": "2022-10-18T15:05:18.288516+05:30",
+            "originalStartDatetime": "2022-10-18T15:05:18.288516+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:05:18.288851+05:30",
+            "type": "instance",
+            "uuid": "eb6c32ae-7427-4855-991c-5fc1f0c1f60f",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:05:27.641157+05:30",
+            "extras": {
+            },
+            "index": 2,
+            "label": "grab",
+            "originalEndDatetime": "2022-10-18T15:05:27.644514+05:30",
+            "originalStartDatetime": "2022-10-18T15:05:27.644514+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:05:27.641157+05:30",
+            "type": "instance",
+            "uuid": "e8808554-0e72-4429-8f0b-c3cb9cae5615",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:05:37.344878+05:30",
+            "extras": {
+            },
+            "index": 3,
+            "label": "elbow_up",
+            "originalEndDatetime": "2022-10-18T15:05:37.345074+05:30",
+            "originalStartDatetime": "2022-10-18T15:05:37.345074+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:05:37.344878+05:30",
+            "type": "instance",
+            "uuid": "efe18080-c9fb-4144-a7f9-c74fecb16e86",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:05:48.880651+05:30",
+            "extras": {
+            },
+            "index": 4,
+            "label": "elbow_down",
+            "originalEndDatetime": "2022-10-18T15:05:48.880500+05:30",
+            "originalStartDatetime": "2022-10-18T15:05:48.880500+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:05:48.880651+05:30",
+            "type": "instance",
+            "uuid": "9df89078-3675-42ca-872d-d267a9b4a750",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:06:00.127720+05:30",
+            "extras": {
+            },
+            "index": 5,
+            "label": "release",
+            "originalEndDatetime": "2022-10-18T15:06:00.128317+05:30",
+            "originalStartDatetime": "2022-10-18T15:06:00.128317+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:06:00.127720+05:30",
+            "type": "instance",
+            "uuid": "b8a734c0-af0f-4b9d-9466-dc0af01b8122",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:06:07.862545+05:30",
+            "extras": {
+            },
+            "index": 6,
+            "label": "rest",
+            "originalEndDatetime": "2022-10-18T15:06:07.864342+05:30",
+            "originalStartDatetime": "2022-10-18T15:06:07.864342+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:06:07.862545+05:30",
+            "type": "instance",
+            "uuid": "25329a9b-7807-4a48-adac-d3bac1af0310",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:06:19.067550+05:30",
+            "extras": {
+            },
+            "index": 7,
+            "label": "grab",
+            "originalEndDatetime": "2022-10-18T15:06:19.067537+05:30",
+            "originalStartDatetime": "2022-10-18T15:06:19.067537+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:06:19.067550+05:30",
+            "type": "instance",
+            "uuid": "4a35ae56-0b67-4e0d-968d-c3dd0b56f80c",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:06:27.293163+05:30",
+            "extras": {
+            },
+            "index": 8,
+            "label": "elbow_up",
+            "originalEndDatetime": "2022-10-18T15:06:27.292473+05:30",
+            "originalStartDatetime": "2022-10-18T15:06:27.292473+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:06:27.293163+05:30",
+            "type": "instance",
+            "uuid": "869b70ad-a481-43be-a49a-330f06a1821d",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:06:35.699886+05:30",
+            "extras": {
+            },
+            "index": 9,
+            "label": "elbow_down",
+            "originalEndDatetime": "2022-10-18T15:06:35.698974+05:30",
+            "originalStartDatetime": "2022-10-18T15:06:35.698974+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:06:35.699886+05:30",
+            "type": "instance",
+            "uuid": "9e931f38-dd87-4c85-ac3c-ed28c3473c42",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:06:46.209399+05:30",
+            "extras": {
+            },
+            "index": 10,
+            "label": "release",
+            "originalEndDatetime": "2022-10-18T15:06:46.212494+05:30",
+            "originalStartDatetime": "2022-10-18T15:06:46.212494+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:06:46.209399+05:30",
+            "type": "instance",
+            "uuid": "00aa4774-c611-4822-a9b0-a44588dc5231",
+            "value": "test value"
+        },
+        {
+            "endDatetime": "2022-10-18T15:06:53.186183+05:30",
+            "extras": {
+            },
+            "index": 11,
+            "label": "rest",
+            "originalEndDatetime": "2022-10-18T15:06:53.183583+05:30",
+            "originalStartDatetime": "2022-10-18T15:06:53.183583+05:30",
+            "port": "python_app",
+            "startDatetime": "2022-10-18T15:06:53.186183+05:30",
+            "type": "instance",
+            "uuid": "43641a0b-3fde-4d70-b5fb-ffd2fea5b547",
+            "value": "test value"
+        }
+    ],
+    "connectionType": "dongle",
+    "exportApp": "com.adgs.testapp",
+    "exportTime": "2022-10-18T15:07:02.996+05:30",
+    "headsetType": "EPOCFLEX",
+    "mappings": {
+        "CMS": "TP9",
+        "DRL": "TP10",
+        "LA": "C3",
+        "LB": "T7",
+        "LC": "FC1",
+        "LD": "FC5",
+        "LE": "FT9",
+        "LF": "F3",
+        "LG": "F7",
+        "LH": "Fp1",
+        "LJ": "Pz",
+        "LK": "Cz",
+        "LL": "O1",
+        "LM": "PO9",
+        "LN": "P3",
+        "LO": "P7",
+        "LP": "CP1",
+        "LQ": "CP5",
+        "RA": "C4",
+        "RB": "T8",
+        "RC": "FC2",
+        "RD": "FC6",
+        "RE": "FT10",
+        "RF": "F4",
+        "RG": "F8",
+        "RH": "Fp2",
+        "RJ": "Oz",
+        "RK": "Fz",
+        "RL": "O2",
+        "RM": "PO10",
+        "RN": "P4",
+        "RO": "P8",
+        "RP": "CP2",
+        "RQ": "CP6"
+    },
+    "recordId": "47c917e9-eec8-48d6-ae7d-536ccef8a41d",
+    "user": "adgs"
+}
