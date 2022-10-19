@@ -117,6 +117,34 @@ class Marker():
                 marker_label = self.marker_label[label_index]
                 self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
                 time.sleep(2)
+            elif input=='5':
+                label_index=5
+                marker_time = time.time()*1000
+                print('add marker at : ', marker_time)
+                marker_label = self.marker_label[label_index]
+                self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+                time.sleep(2)
+            elif input=='6':
+                label_index=6
+                marker_time = time.time()*1000
+                print('add marker at : ', marker_time)
+                marker_label = self.marker_label[label_index]
+                self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+                time.sleep(2)
+            elif input=='7':
+                label_index=7
+                marker_time = time.time()*1000
+                print('add marker at : ', marker_time)
+                marker_label = self.marker_label[label_index]
+                self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+                time.sleep(2)
+            elif input=='8':
+                label_index=8
+                marker_time = time.time()*1000
+                print('add marker at : ', marker_time)
+                marker_label = self.marker_label[label_index]
+                self.inject_marker(marker_time, self.marker_value, marker_label, port='python_app')
+                time.sleep(2)
             elif input=='S':
                 flag=False
             else:
@@ -242,10 +270,10 @@ def main():
 
     # marker input for inject marker. Please see add_markers()
     m.marker_value = "test value" # required param and can not be empty
-    m.marker_label = ['rest','grab','release','elbow_up','elbow_down'] #required param and can not be empty
+    m.marker_label = ['rest','grab','release','elbow_up','elbow_down','wrist_supination','wrist_pronation','shoulder_right','shoulder_left'] #required param and can not be empty
 
     # input params for export_record. Please see on_warn_cortex_stop_all_sub()
-    m.record_export_folder = 'D:\Capstone\Robotic-Arm-Control-using-EEG\Data Collection\Data' # your place to export, you should have write permission, example on desktop
+    m.record_export_folder = 'D:\Capstone\Robotic-Arm-Control-using-EEG\Data Collection\Data\Day_2' # your place to export, you should have write permission, example on desktop
     m.record_export_data_types = ['EEG']
     m.record_export_format = 'CSV'
     m.record_export_version = 'V2'
