@@ -10,7 +10,11 @@ labels = {
     'grab' : [],
     'elbow_up' :[],
     'elbow_down':[],
-    'release':[]
+    'release':[],
+    'shoulder_right':[],
+    'shoulder_left':[],
+    'wrist_pronation':[],
+    'wrist_supination':[]
 }
 #print(data['Markers'][0]['label'])
 while i!=len(data['Markers'])-2:
