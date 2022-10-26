@@ -5,7 +5,7 @@ import dateutil.parser as dp
 
 json_file_path = "Data/Day_1/Subject_1_EPOCFLEX_164574_2022.10.18T14.53.22+05.30.json"
 csv_file_path =  "Data/Day_1/Subject_1_EPOCFLEX_164574_2022.10.18T14.53.22+05.30.csv"
-labels_to_index = {'rest':1, 'grab':2, 'elbow_up':3, 'elbow_down':4, 'release':5, 'None': 0}
+labels_to_index = {'rest':1, 'grab':2, 'elbow_up':3, 'elbow_down':4, 'release':5, 'shoulder_right':6, 'shoulder_left':6,'wrist_pronation':7,'wrist_pronation':8,'None': 0}
 
 
 def labelsToIndex(label):
