@@ -1,7 +1,7 @@
 import json
 import dateutil.parser as dp
   
-f = open('D:\Capstone\Robotic-Arm-Control-using-EEG\Data Collection\Data\Subject_1_EPOCFLEX_164574_2022.10.17T20.59.32+05.30.json')
+f = open('D:\Capstone\Robotic-Arm-Control-using-EEG\Data Collection\Data\Day_1\Subject_1_EPOCFLEX_164574_2022.10.18T14.53.22+05.30.json')
 data = json.load(f)
 
 i=0
