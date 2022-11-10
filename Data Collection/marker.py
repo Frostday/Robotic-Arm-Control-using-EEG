@@ -273,7 +273,7 @@ def main():
     m.marker_label = ['rest','grab','release','elbow_up','elbow_down','wrist_supination','wrist_pronation','shoulder_right','shoulder_left'] #required param and can not be empty
 
     # input params for export_record. Please see on_warn_cortex_stop_all_sub()
-    m.record_export_folder = 'D:\Capstone\Robotic-Arm-Control-using-EEG\Data Collection\Data\Day_2' # your place to export, you should have write permission, example on desktop
+    m.record_export_folder = 'D:\Capstone\Robotic-Arm-Control-using-EEG\Data Collection\Data\Day_3' # your place to export, you should have write permission, example on desktop
     m.record_export_data_types = ['EEG']
     m.record_export_format = 'CSV'
     m.record_export_version = 'V2'
