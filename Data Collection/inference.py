@@ -1,4 +1,5 @@
 from cortex import Cortex
+from model import send_to_model
 
 class Subcribe():
     """
@@ -121,6 +122,7 @@ class Subcribe():
            {'eeg': [99, 0, 4291.795, 4371.795, 4078.461, 4036.41, 4231.795, 0.0, 0], 'time': 1627457774.5166}
         """
         data = kwargs.get('data')
+        send_to_model(data)
         # print('eeg data: {}'.format(data))
 
     # callbacks functions
