@@ -36,12 +36,7 @@ class Subcribe():
         print("Subscribe __init__")
         self.c = Cortex(app_client_id, app_client_secret, debug_mode=True, **kwargs)
         self.c.bind(create_session_done=self.on_create_session_done)
-        self.c.bind(new_data_labels=self.on_new_data_labels)
-        self.c.bind(new_eeg_data=self.on_new_eeg_data)
-        self.c.bind(new_mot_data=self.on_new_mot_data)
-        self.c.bind(new_dev_data=self.on_new_dev_data)
-        self.c.bind(new_met_data=self.on_new_met_data)
-        self.c.bind(new_pow_data=self.on_new_pow_data)
+        self.c.bind(new_eeg_data=self.on_new_eeg_data)        
         self.c.bind(inform_error=self.on_inform_error)
 
     def start(self, streams, headsetId=''):
@@ -114,26 +109,6 @@ class Subcribe():
         """
         self.c.unsub_request(streams)
 
-    def on_new_data_labels(self, *args, **kwargs):
-        """
-        To handle data labels of subscribed data 
-        Returns
-        -------
-        data: list  
-              array of data labels
-        name: stream name
-        For example:
-            eeg: ["COUNTER","INTERPOLATED", "AF3", "T7", "Pz", "T8", "AF4", "RAW_CQ", "MARKER_HARDWARE"]
-            motion: ['COUNTER_MEMS', 'INTERPOLATED_MEMS', 'Q0', 'Q1', 'Q2', 'Q3', 'ACCX', 'ACCY', 'ACCZ', 'MAGX', 'MAGY', 'MAGZ']
-            dev: ['AF3', 'T7', 'Pz', 'T8', 'AF4', 'OVERALL']
-            met : ['eng.isActive', 'eng', 'exc.isActive', 'exc', 'lex', 'str.isActive', 'str', 'rel.isActive', 'rel', 'int.isActive', 'int', 'foc.isActive', 'foc']
-            pow: ['AF3/theta', 'AF3/alpha', 'AF3/betaL', 'AF3/betaH', 'AF3/gamma', 'T7/theta', 'T7/alpha', 'T7/betaL', 'T7/betaH', 'T7/gamma', 'Pz/theta', 'Pz/alpha', 'Pz/betaL', 'Pz/betaH', 'Pz/gamma', 'T8/theta', 'T8/alpha', 'T8/betaL', 'T8/betaH', 'T8/gamma', 'AF4/theta', 'AF4/alpha', 'AF4/betaL', 'AF4/betaH', 'AF4/gamma']
-        """
-        data = kwargs.get('data')
-        stream_name = data['streamName']
-        stream_labels = data['labels']
-        print('{} labels are : {}'.format(stream_name, stream_labels))
-
     def on_new_eeg_data(self, *args, **kwargs):
         """
         To handle eeg data emitted from Cortex
@@ -147,58 +122,6 @@ class Subcribe():
         """
         data = kwargs.get('data')
         # print('eeg data: {}'.format(data))
-
-    def on_new_mot_data(self, *args, **kwargs):
-        """
-        To handle motion data emitted from Cortex
-
-        Returns
-        -------
-        data: dictionary
-             The values in the array motion match the labels in the array labels return at on_new_data_labels
-        For example: {'mot': [33, 0, 0.493859, 0.40625, 0.46875, -0.609375, 0.968765, 0.187503, -0.250004, -76.563667, -19.584995, 38.281834], 'time': 1627457508.2588}
-        """
-        data = kwargs.get('data')
-        print('motion data: {}'.format(data))
-
-    def on_new_dev_data(self, *args, **kwargs):
-        """
-        To handle dev data emitted from Cortex
-
-        Returns
-        -------
-        data: dictionary
-             The values in the array dev match the labels in the array labels return at on_new_data_labels
-        For example:  {'signal': 1.0, 'dev': [4, 4, 4, 4, 4, 100], 'batteryPercent': 80, 'time': 1627459265.4463}
-        """
-        data = kwargs.get('data')
-        print('dev data: {}'.format(data))
-
-    def on_new_met_data(self, *args, **kwargs):
-        """
-        To handle performance metrics data emitted from Cortex
-
-        Returns
-        -------
-        data: dictionary
-             The values in the array met match the labels in the array labels return at on_new_data_labels
-        For example: {'met': [True, 0.5, True, 0.5, 0.0, True, 0.5, True, 0.5, True, 0.5, True, 0.5], 'time': 1627459390.4229}
-        """
-        data = kwargs.get('data')
-        print('pm data: {}'.format(data))
-
-    def on_new_pow_data(self, *args, **kwargs):
-        """
-        To handle band power data emitted from Cortex
-
-        Returns
-        -------
-        data: dictionary
-             The values in the array pow match the labels in the array labels return at on_new_data_labels
-        For example: {'pow': [5.251, 4.691, 3.195, 1.193, 0.282, 0.636, 0.929, 0.833, 0.347, 0.337, 7.863, 3.122, 2.243, 0.787, 0.496, 5.723, 2.87, 3.099, 0.91, 0.516, 5.783, 4.818, 2.393, 1.278, 0.213], 'time': 1627459390.1729}
-        """
-        data = kwargs.get('data')
-        print('pow data: {}'.format(data))
 
     # callbacks functions
     def on_create_session_done(self, *args, **kwargs):
