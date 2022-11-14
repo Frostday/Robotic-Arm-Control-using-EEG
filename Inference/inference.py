@@ -1,5 +1,8 @@
 from cortex import Cortex
 from model import send_to_model
+import tensorflow as tf
+import numpy as np
+from concurrent.futures import ThreadPoolExecutor
 
 class Subcribe():
     """
@@ -122,7 +125,26 @@ class Subcribe():
            {'eeg': [99, 0, 4291.795, 4371.795, 4078.461, 4036.41, 4231.795, 0.0, 0], 'time': 1627457774.5166}
         """
         data = kwargs.get('data')
-        send_to_model(data)
+        batches = 32
+        timesteps = 10
+        global X, batch, model
+        new_data = data['eeg'][2:34]
+        X.append(new_data)
+        if len(X) < timesteps:
+            print(len(batch))
+        elif len(X) == timesteps:
+            batch.append(X.copy())
+            X = list()
+            if len(batch) == batches:
+                batch_arr = np.array(batch.copy())
+                values = model.predict(batch_arr)
+                moves = np.argmax(values, axis=1)
+                print(moves)
+                batch = list()
+        else:
+            X = []
+            batch = []
+            print("error")
         # print('eeg data: {}'.format(data))
 
     # callbacks functions
@@ -150,7 +172,6 @@ class Subcribe():
 # -----------------------------------------------------------
 
 def main():
-
     # Please fill your application clientId and clientSecret before running script
     your_app_client_id = 'YhTVuH9KahGPJFaTjaHA3JTWFBJgphPGolgYomZ7'
     your_app_client_secret = 'GGu9BpyH3gRkJq0ZJpdjAPqofgYDctl31Bzbl69o2XCCL0uLjcl5Gfo0RgMGJxEfnBEc7hyEAZFnsKBADBohkEZ4ifAuaH0L7jMWRAgs6K3GYO7CwPbYREsj65NYw7aa'
@@ -162,6 +183,8 @@ def main():
     s.start(streams)
 
 if __name__ =='__main__':
+    X, batch = [], []
+    model = tf.keras.models.load_model('../Models/eeg_model_3.h5')
     main()
 
 # -----------------------------------------------------------
