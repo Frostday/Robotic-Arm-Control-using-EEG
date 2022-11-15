@@ -1,5 +1,5 @@
 from cortex import Cortex
-from model import send_to_model
+import serial
 import tensorflow as tf
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
@@ -127,11 +127,22 @@ class Subcribe():
         data = kwargs.get('data')
         batches = 32
         timesteps = 10
-        global X, batch, model
+        movements = {
+                    0:'rest',
+                    1:'grab',
+                    2:'release',
+                    3:'elbow_up',
+                    4:'elbow_down',
+                    5:'wrist_supination',
+                    6:'wrist_pronation',
+                    7:'shoulder_right',
+                    8:'shoulder_left'
+                }
+        global X, batch, model, arduino
         new_data = data['eeg'][2:34]
         X.append(new_data)
         if len(X) < timesteps:
-            print(len(batch))
+            pass
         elif len(X) == timesteps:
             batch.append(X.copy())
             X = list()
@@ -139,7 +150,10 @@ class Subcribe():
                 batch_arr = np.array(batch.copy())
                 values = model.predict(batch_arr)
                 moves = np.argmax(values, axis=1)
-                print(moves)
+                for m in moves:
+                    move = movements[m]
+                    arduino.write(bytes(move, 'utf-8'))
+                    print(arduino.readline())
                 batch = list()
         else:
             X = []
@@ -185,6 +199,8 @@ def main():
 if __name__ =='__main__':
     X, batch = [], []
     model = tf.keras.models.load_model('../Models/eeg_model_3.h5')
+    arduino = serial.Serial(port='COM3', baudrate=115200, timeout=.1)
+
     main()
 
 # -----------------------------------------------------------
