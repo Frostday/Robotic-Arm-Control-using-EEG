@@ -20,40 +20,41 @@ void loop() {
   while (!Serial.available());
   x = Serial.readString();
   Serial.print(x);
-if (x=="release")
-{
-  fist.write(release_limit);
-}
-if (x=="grab")
-{
-  fist.write(grab_limit);
-}
-if (x=="shoulder_left")
-{
-  for (float pos=150; pos>=shoulder_left_limit; pos-=1) {
-    shoulder.write(pos);
-    delay(10);
+  
+  if (x=="release")
+  {
+    fist.write(release_limit);
   }
-}
-if (x=="shoulder_right")
-{
-  for (float pos=50; pos<=shoulder_right_limit; pos+=1) {
-    shoulder.write(pos);
-    delay(10);
+  if (x=="grab")
+  {
+    fist.write(grab_limit);
   }
-}
-if (x=="elbow_down")
-{
-  for (float pos=110; pos>=elbow_down_limit; pos-=1) {
-    elbow.write(pos);
-    delay(10);
+  if (x=="shoulder_left")
+  {
+    for (float pos=150; pos>=shoulder_left_limit; pos-=1) {
+      shoulder.write(pos);
+      delay(10);
+    }
   }
-}
-if (x=="elbow_up")
-{
-  for (float pos=50; pos<=elbow_up_limit; pos+=1) {
-    elbow.write(pos);
-    delay(10);
+  if (x=="shoulder_right")
+  {
+    for (float pos=50; pos<=shoulder_right_limit; pos+=1) {
+      shoulder.write(pos);
+      delay(10);
+    }
   }
-}
+  if (x=="elbow_down")
+  {
+    for (float pos=110; pos>=elbow_down_limit; pos-=1) {
+      elbow.write(pos);
+      delay(10);
+    }
+  }
+  if (x=="elbow_up")
+  {
+    for (float pos=50; pos<=elbow_up_limit; pos+=1) {
+      elbow.write(pos);
+      delay(10);
+    }
+  }
 }
