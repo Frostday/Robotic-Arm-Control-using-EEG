@@ -2,7 +2,15 @@ from cortex import Cortex
 import serial
 import tensorflow as tf
 import numpy as np
-from concurrent.futures import ThreadPoolExecutor
+from collections import Counter
+import time
+
+
+def write_read(arduino, x):
+    arduino.write(bytes(x, 'utf-8'))
+    time.sleep(0.05)
+    data = arduino.readline()
+    return data
 
 class Subcribe():
     """
@@ -150,10 +158,12 @@ class Subcribe():
                 batch_arr = np.array(batch.copy())
                 values = model.predict(batch_arr)
                 moves = np.argmax(values, axis=1)
-                for m in moves:
-                    move = movements[m]
-                    arduino.write(bytes(move, 'utf-8'))
-                    print(arduino.readline())
+                
+                occurence_count = Counter(moves)
+                x = occurence_count.most_common(1)[0][0]
+                move = movements[x]
+                value = write_read(arduino, x)
+                print(value)
                 batch = list()
         else:
             X = []
